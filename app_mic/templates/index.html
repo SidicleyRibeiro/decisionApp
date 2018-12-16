@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <h1> Welcome to the webapp of decision analysis.</h1>
+  <h3> In the list below you can select the method you would like to use: </h3>
+
+  <form action="" method="post" novalidate>
+    {{ form.hidden_tag() }}
+    {% for method in methods %}
+
+    <p> <input type="radio" name="method_choice" value= "{{ method.method_url }}"">
+        {{method.method_name}} <br>
+    </p>
+
+    {% endfor %}
+    <p> {{ form.submit_method() }} </p>
+  </form>
+
+{% endblock %}
